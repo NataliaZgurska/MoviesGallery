@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../services/api';
+import MovieList from '../components/MovieList/MovieList';
 
 const HomePage = () => {
   const [movies, setMovies] = useState(null);
@@ -20,16 +21,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <ul>
-        {Array.isArray(movies) &&
-          movies.map(item => {
-            return (
-              <li key={item.id}>
-                <h2>{item.title}</h2>
-              </li>
-            );
-          })}
-      </ul>
+      <MovieList movies={movies} />
     </div>
   );
 };

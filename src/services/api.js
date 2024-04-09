@@ -9,8 +9,13 @@ axios.defaults.params = { language: 'en - US' };
 
 export const getTrendingMovies = async () => {
   const { data } = await axios.get('trending/movie/day');
-  console.log(data.results);
   return data.results;
+};
+
+export const getMovieInf = async id => {
+  const { data } = await axios.get(`/movie/${id}`);
+  console.log('data: ', data);
+  return data;
 };
 
 // adult: false;

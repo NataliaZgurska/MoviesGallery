@@ -1,34 +1,21 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Navigate, Route, Routes } from 'react-router-dom';
 import clsx from 'clsx';
 import css from './App.module.css';
 import HomePage from './pages/HomePage';
+import Header from './components/Header/Header';
+import MoviesPage from './pages/MoviesPage';
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 function App() {
-  const getNavLinkClassName = ({ isActive }) =>
-    clsx(css.navLink, {
-      [css.active]: isActive,
-    });
   return (
-    <>
-      <header>
-        <nav className={css.nav}>
-          <NavLink className={getNavLinkClassName} to="/homepage">
-            Home
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/moviedetails">
-            Moviedetails
-          </NavLink>
-          <NavLink className={getNavLinkClassName} to="/search">
-            Search
-          </NavLink>
-        </nav>
-      </header>
-      <main>
-        <Routes>
-          <Route path="/homepage" element={<HomePage />} />
-        </Routes>
-      </main>
-    </>
+    <Routes>
+      <Route path="/" element={<Header />}>
+        <Route index element={<HomePage />} />
+        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movie/:movieId" element={<MovieDetailsPage />} />
+      </Route>
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
 }
 
