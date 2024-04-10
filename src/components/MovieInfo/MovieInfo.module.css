@@ -1,0 +1,12 @@
+.movieInformation {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid gray;
+  margin: 10px;
+}
+.filmInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+}

@@ -1,8 +1,6 @@
-//   genres: { name }
+import css from './MovieInfo.module.css';
 
 const MovieInfo = ({ movieData }) => {
-  console.log('movieData: ', movieData);
-
   const { id, title, poster_path, vote_average, overview, release_date } =
     movieData;
 
@@ -15,13 +13,15 @@ const MovieInfo = ({ movieData }) => {
   const imgSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
   return (
-    <div>
+    <div className={css.movieInformation}>
       <img src={poster_path ? imgSrc : defaultImg} width={250} alt="poster" />
-      <h2>{title}</h2>
-      <p>{release_date}</p>
-      <p>User Score: {vote_average}</p>
-      <p>Overview: {overview}</p>
-      <p>Genres: {genresArray}</p>
+      <div className={css.filmInformation}>
+        <h2>{title}</h2>
+        <p>{release_date}</p>
+        <p>User Score: {vote_average}</p>
+        <p>Overview: {overview}</p>
+        <p>Genres: {genresArray}</p>
+      </div>
     </div>
   );
 };

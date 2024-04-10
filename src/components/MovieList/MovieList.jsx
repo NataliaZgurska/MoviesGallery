@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
+import css from './MovieList.module.css';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
 
   return (
-    <ul>
+    <ul className={css.movieList}>
       {Array.isArray(movies) &&
         movies.map(movie => {
           return (

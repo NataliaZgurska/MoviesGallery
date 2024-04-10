@@ -1,0 +1,20 @@
+.link {
+  /* color: var(--color-white); 
+  border: 1px solid var(--color-light);
+  transition: background-color var(--animation-cubicBezie); */
+
+  display: inline-block;
+  letter-spacing: 0.06em;
+  border: 1px solid gray;
+  background-color: transparent;
+  color: black;
+  border-radius: 4px;
+  padding: 12px 18px;
+  transition: background-color 2s;
+  margin: 10px;
+}
+
+.link:hover,
+.link:focus {
+  background-color: gray;
+}
