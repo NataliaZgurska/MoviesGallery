@@ -10,3 +10,17 @@
   gap: 10px;
   margin: 20px;
 }
+.additionalInfo {
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px; */
+  border: 1px solid gray;
+  margin: 10px;
+}
+.additionalLink {
+  display: block;
+  color: black;
+}
+.additionalLink:hover {
+  color: blue;
+}

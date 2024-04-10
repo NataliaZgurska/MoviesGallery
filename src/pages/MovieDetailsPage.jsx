@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { getMovieInf } from '../services/api';
-import MovieInfo from '../components/MovieInfo/MovieInfo';
+
 import Loader from '../components/Loader/Loader';
 import GoBackBtn from '../components/GoBackBtn/GoBackBtn';
-import MovieAdditionalInfo from '../components/MovieAdditionalInfo/MovieAdditionalInfo';
+import MovieInfo from '../components/MovieInfo/MovieInfo';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -28,7 +28,6 @@ const MovieDetailsPage = () => {
       {error && <Heading title={error} />}
       <GoBackBtn to={goBack.current} />
       {movie && <MovieInfo movieData={movie} />}
-      {movie && <MovieAdditionalInfo movieData={movie} />}
     </div>
   );
 };

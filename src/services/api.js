@@ -14,6 +14,10 @@ export const getTrendingMovies = async () => {
 
 export const getMovieInf = async id => {
   const { data } = await axios.get(`/movie/${id}`);
-
   return data;
+};
+
+export const getMovieCastInf = async id => {
+  const { data } = await axios.get(`/movie/${id}/credits`);
+  return data.cast;
 };
