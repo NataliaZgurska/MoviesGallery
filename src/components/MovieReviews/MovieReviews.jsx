@@ -25,7 +25,7 @@ const MovieReviews = ({ id }) => {
       {isLoading && <Loader />}
       {error && <ErrorMessage title={error} />}
       <ul className={css.reviewList}>
-        {Array.isArray(reviews) &&
+        {reviews !== null && reviews.length > 0 ? (
           reviews.map(review => {
             return (
               <li key={review.id} className={css.reviewItem}>
@@ -33,10 +33,14 @@ const MovieReviews = ({ id }) => {
                 <p>{review.content}</p>
               </li>
             );
-          })}
+          })
+        ) : (
+          <p>Oops! We don&apos;t have any reviews for this movie</p>
+        )}
       </ul>
     </div>
   );
 };
 
 export default MovieReviews;
+// Array.isArray(reviews) &&
