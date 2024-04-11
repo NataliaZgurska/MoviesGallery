@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import MovieCast from '../MovieCast/MovieCast';
 import MovieReviews from '../MovieReviews/MovieReviews';
+
 import css from './MovieInfo.module.css';
 
 const MovieInfo = ({ movieData }) => {
@@ -40,7 +41,7 @@ const MovieInfo = ({ movieData }) => {
 
         <Routes>
           <Route path="/cast" element={<MovieCast id={id} />} />
-          <Route path="/reviews" element={<MovieReviews />} />
+          <Route path="/reviews" element={<MovieReviews id={id} />} />
         </Routes>
       </div>
     </>

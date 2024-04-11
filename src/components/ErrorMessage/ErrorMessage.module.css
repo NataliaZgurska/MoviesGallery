@@ -1,8 +1,7 @@
-.errorMessageText {
-  margin-top: 20px;
-  text-align: center;
-  color: blueviolet;
+.title {
   font-size: 30px;
-  font-weight: 600;
-  font-style: italic;
+  font-weight: 700;
+  color: red;
+  text-shadow: 1px 1px 2px #9e9e9e;
+  text-align: center;
 }

@@ -1,9 +1,7 @@
 import css from './ErrorMessage.module.css';
-const ErrorMessage = (
-  message = 'Something went wrong, please reload the page 🤷‍♀️'
-) => {
-  return <p className={css.errorMessageText}>{message}</p>;
+
+const Heading = ({ title }) => {
+  return <h2 className={css.title}>{title}</h2>;
 };
 
-export default ErrorMessage;
-//  message = 'Nothing was found. Try to change your request 🤷‍♀️';
+export default Heading;

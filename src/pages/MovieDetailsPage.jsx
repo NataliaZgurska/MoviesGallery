@@ -5,6 +5,7 @@ import { getMovieInf } from '../services/api';
 import Loader from '../components/Loader/Loader';
 import GoBackBtn from '../components/GoBackBtn/GoBackBtn';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
+import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -25,7 +26,7 @@ const MovieDetailsPage = () => {
   return (
     <div>
       {isLoading && <Loader />}
-      {error && <Heading title={error} />}
+      {error && <ErrorMessage title={error} />}
       <GoBackBtn to={goBack.current} />
       {movie && <MovieInfo movieData={movie} />}
     </div>
