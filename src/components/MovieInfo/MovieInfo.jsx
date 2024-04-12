@@ -40,8 +40,8 @@ const MovieInfo = ({ movieData }) => {
         </Link>
 
         <Routes>
-          <Route path="/cast" element={<MovieCast id={id} />} />
-          <Route path="/reviews" element={<MovieReviews id={id} />} />
+          <Route path="/cast" element={<MovieCast />} />
+          <Route path="/reviews" element={<MovieReviews />} />
         </Routes>
       </div>
     </>

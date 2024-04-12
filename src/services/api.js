@@ -18,11 +18,12 @@ export const getMovieInf = async id => {
 };
 
 export const getMovieCastInf = async id => {
+  console.log(id);
   const { data } = await axios.get(`/movie/${id}/credits`);
   return data.cast;
 };
 
-export const getMovieReviewstInf = async id => {
+export const getMovieReviewsInf = async id => {
   const { data } = await axios.get(`/movie/${id}/reviews`);
   return data.results;
 };
