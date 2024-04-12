@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { getTrendingMovies } from '../services/api';
 import MovieList from '../components/MovieList/MovieList';
 import Loader from '../components/Loader/Loader';
 import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
+import { Section } from '../components/Section/Section';
+import { Container } from '../components/Container/Container';
+import { getTrendingMovies } from '../services/api';
 
 const HomePage = () => {
   const [movies, setMovies] = useState(null);
@@ -18,11 +20,14 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      {isLoading && <Loader />}
-      {error && <ErrorMessage title={error} />}
-      <MovieList movies={movies} />
-    </div>
+    <Section>
+      <Container>
+        {isLoading && <Loader />}
+        {error && <ErrorMessage title={error} />}
+        <h2>Trending today</h2>
+        <MovieList movies={movies} />
+      </Container>
+    </Section>
   );
 };
 

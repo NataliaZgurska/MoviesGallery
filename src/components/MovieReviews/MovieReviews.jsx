@@ -43,4 +43,3 @@ const MovieReviews = ({ id }) => {
 };
 
 export default MovieReviews;
-// Array.isArray(reviews) &&

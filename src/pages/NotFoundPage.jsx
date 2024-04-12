@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import { Section } from '../components/Section/Section';
+import { Container } from '../components/Container/Container';
 
 const NotFoundPage = () => {
   const [timer, setTimer] = useState(0);
@@ -18,9 +20,13 @@ const NotFoundPage = () => {
 
   return (
     <div>
-      <h1>Page you visited doesn&apos;t exist.</h1>
-      <h2>You will be redirected to Home in {5 - timer} seconds</h2>
-      <Link to="/">Go Home</Link>
+      <Section>
+        <Container>
+          <h1>Page you visited doesn&apos;t exist.</h1>
+          <h2>You will be redirected to Home in {5 - timer} seconds</h2>
+          <Link to="/">Go Home</Link>
+        </Container>
+      </Section>
     </div>
   );
 };

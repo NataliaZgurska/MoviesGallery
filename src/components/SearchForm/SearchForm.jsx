@@ -32,11 +32,3 @@ const SearchForm = ({ searchMovie }) => {
 };
 
 export default SearchForm;
-
-//   const onSubmit = e => {
-//     e.preventDefault();
-//     const value = e.target.search.value;
-//     if (value.trim() === '') return;
-//     searchQuery(value.trim());
-//     e.target.reset();
-//   };

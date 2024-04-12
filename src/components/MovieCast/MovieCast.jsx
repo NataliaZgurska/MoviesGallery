@@ -28,17 +28,17 @@ const MovieCast = ({ id }) => {
         {Array.isArray(casts) &&
           casts.map(cast => {
             return (
-              <li key={cast.id}>
+              <li key={cast.id} className={css.castItem}>
                 <img
                   src={
                     cast.profile_path
                       ? `https://image.tmdb.org/t/p/w500${cast.profile_path}`
                       : defaultImg
                   }
-                  width={250}
+                  width={150}
                   alt="{cast.name}"
                 />
-                <h3>{cast.name}</h3>
+                <h3>● {cast.name}</h3>
                 <p>Character: {cast.character}</p>
               </li>
             );

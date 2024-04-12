@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { getMovieInf } from '../services/api';
 
 import Loader from '../components/Loader/Loader';
 import GoBackBtn from '../components/GoBackBtn/GoBackBtn';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
 import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
+import { Section } from '../components/Section/Section';
+import { Container } from '../components/Container/Container';
+import { getMovieInf } from '../services/api';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -25,10 +27,14 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      {isLoading && <Loader />}
-      {error && <ErrorMessage title={error} />}
-      <GoBackBtn to={goBack.current} />
-      {movie && <MovieInfo movieData={movie} />}
+      <Section>
+        <Container>
+          {isLoading && <Loader />}
+          {error && <ErrorMessage title={error} />}
+          {movie && <GoBackBtn to={goBack.current} />}
+          {movie && <MovieInfo movieData={movie} />}
+        </Container>
+      </Section>
     </div>
   );
 };

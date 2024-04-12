@@ -1,0 +1,17 @@
+.form {
+  padding: 12px 0 12px 0;
+}
+.formInput {
+  padding-left: 10px;
+  width: 300px;
+  height: 40px;
+}
+.formInput:focus {
+  outline: none;
+}
+
+.formBtn {
+  padding: 10px;
+  height: 40px;
+  border: 1px solid rgb(128 128 128 / 84%);
+}

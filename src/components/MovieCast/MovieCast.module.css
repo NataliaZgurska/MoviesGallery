@@ -1,0 +1,9 @@
+.castList {
+  margin-top: 10px;
+  border-top: 1px solid #8080808a;
+  box-shadow: -1px -2px 5px 0px #8080804d;
+}
+
+.castItem {
+  margin-top: 20px;
+}
